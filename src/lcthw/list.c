@@ -1,5 +1,5 @@
-#include "list.h"
-#include "dbg.h"
+#include <lcthw/list.h>
+#include <lcthw/dbg.h>
 
 List *List_create(){
 	return calloc(1, sizeof(List));
@@ -60,7 +60,7 @@ void List_unshift(List *list, void *value){			//在链表的头部插入节点
 
 	node->value = value;
 
-	if(list->first){
+	if(list->first == NULL){
 		list->first = node;
 		list->last = node;
 	}else{

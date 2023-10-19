@@ -1,0 +1,41 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+LIST_FOREACH	list.h	39;"	d
+List	list.h	/^typedef struct List {$/;"	s
+List	list.h	/^} List;$/;"	t	typeref:struct:List
+ListNode	list.h	/^typedef struct ListNode {$/;"	s
+ListNode	list.h	/^} ListNode;$/;"	t	typeref:struct:ListNode
+List_clear	list.c	/^void List_clear(List *list){			\/\/清除value指向的内存$/;"	f
+List_clear_destroy	list.c	/^void List_clear_destroy(List *list){$/;"	f
+List_count	list.h	25;"	d
+List_create	list.c	/^List *List_create(){$/;"	f
+List_destroy	list.c	/^void List_destroy(List *list){			\/\/从第一个遍历到最后一个$/;"	f
+List_first	list.h	26;"	d
+List_last	list.h	27;"	d
+List_pop	list.c	/^void *List_pop(List *list){$/;"	f
+List_push	list.c	/^void List_push(List *list, void *value){$/;"	f
+List_remove	list.c	/^void *List_remove(List *list, ListNode *node){		\/\/分四种情况删除某点$/;"	f
+List_shift	list.c	/^void *List_shift(List *list){$/;"	f
+List_unshift	list.c	/^void List_unshift(List *list, void *value){			\/\/在链表的头部插入节点$/;"	f
+__dbg_h__	dbg.h	2;"	d
+check	dbg.h	28;"	d
+check_debug	dbg.h	36;"	d
+check_mem	dbg.h	34;"	d
+clean_errno	dbg.h	15;"	d
+count	list.h	/^	int count;$/;"	m	struct:List
+debug	dbg.h	11;"	d
+debug	dbg.h	9;"	d
+first	list.h	/^	ListNode *first;$/;"	m	struct:List
+last	list.h	/^	ListNode *last;$/;"	m	struct:List
+lcthw_List_h	list.h	2;"	d
+log_err	dbg.h	17;"	d
+log_info	dbg.h	25;"	d
+log_warn	dbg.h	21;"	d
+next	list.h	/^	struct ListNode *next;$/;"	m	struct:ListNode	typeref:struct:ListNode::ListNode
+prev	list.h	/^	struct ListNode *prev;$/;"	m	struct:ListNode	typeref:struct:ListNode::ListNode
+sentinel	dbg.h	31;"	d
+value	list.h	/^	void *value;$/;"	m	struct:ListNode
