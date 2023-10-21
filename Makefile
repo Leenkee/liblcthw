@@ -36,7 +36,7 @@ tests: $(TESTS)
 	sh ./tests/runtests.sh
 
 $(TESTS): $(TEST_SRC)
-	$(CC) -g -O2 -Wall -I src/ -Wextra -rdynamic $(TEST_SRC) -o $@ $(TARGET)
+	$(CC) -g -O2 -Wall -I src/ -Wextra -rdynamic $@.c -o $@ $(TARGET)		#$(TESTS_SRC)展开将会是两个文件而重复定义一些变量
 	
 valgrind:
 VALGRIND="valgrind --log-file=/tmp/valgrind-%p.log" $(MAKE)

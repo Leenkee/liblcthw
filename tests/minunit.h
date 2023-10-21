@@ -28,6 +28,6 @@
     exit(result != 0);\
 }
 
-int tests_run;
+int tests_run; 
 
 #endif

@@ -12,41 +12,52 @@ List	src/lcthw/list.h	/^typedef struct List {$/;"	s
 List	src/lcthw/list.h	/^} List;$/;"	t	typeref:struct:List
 ListNode	src/lcthw/list.h	/^typedef struct ListNode {$/;"	s
 ListNode	src/lcthw/list.h	/^} ListNode;$/;"	t	typeref:struct:ListNode
+ListNode_swap	src/lcthw/list_algos.c	/^inline void ListNode_swap(ListNode *a, ListNode *b){$/;"	f
+List_bubble_sort	src/lcthw/list_algos.c	/^int List_bubble_sort(List *list, List_compare cmp){$/;"	f
 List_clear	src/lcthw/list.c	/^void List_clear(List *list){			\/\/清除value指向的内存$/;"	f
 List_clear_destroy	src/lcthw/list.c	/^void List_clear_destroy(List *list){$/;"	f
+List_compare	src/lcthw/list_algos.h	/^typedef int (*List_compare)(const void *a, const void *b);$/;"	t
 List_count	src/lcthw/list.h	25;"	d
 List_create	src/lcthw/list.c	/^List *List_create(){$/;"	f
 List_destroy	src/lcthw/list.c	/^void List_destroy(List *list){			\/\/从第一个遍历到最后一个$/;"	f
 List_first	src/lcthw/list.h	26;"	d
 List_last	src/lcthw/list.h	27;"	d
+List_merge	src/lcthw/list_algos.c	/^inline List *List_merge(List *left, List *right, List_compare cmp){$/;"	f
+List_merge_sort	src/lcthw/list_algos.c	/^List *List_merge_sort(List *list, List_compare cmp){$/;"	f
 List_pop	src/lcthw/list.c	/^void *List_pop(List *list){$/;"	f
 List_push	src/lcthw/list.c	/^void List_push(List *list, void *value){$/;"	f
 List_remove	src/lcthw/list.c	/^void *List_remove(List *list, ListNode *node){		\/\/分四种情况删除某点$/;"	f
 List_shift	src/lcthw/list.c	/^void *List_shift(List *list){$/;"	f
 List_unshift	src/lcthw/list.c	/^void List_unshift(List *list, void *value){			\/\/在链表的头部插入节点$/;"	f
 NDEBUG	tests/minunit.h	1;"	d
-OBJECTS	Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))$/;"	m
+NUM_VALUES	tests/list_algos_tests.c	7;"	d	file:
+OBJECTS	Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))					#有这个变量，但是还没有.o文件$/;"	m
 PREFIX	Makefile	/^PREFIX?=\/usr\/local$/;"	m
 RUN_TESTS	tests/minunit.h	16;"	d
 SOURCES	Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
 SO_TARGET	Makefile	/^SO_TARGET=$(patsubst %.a,%.so,$(TARGET))$/;"	m
 TARGET	Makefile	/^TARGET=build\/liblcthdw.a$/;"	m
-TESTS	Makefile	/^TESTS=$(patsubst %.c,%,$(TEST_SRC))$/;"	m
+TESTS	Makefile	/^TESTS=$(patsubst %.c,%,$(TEST_SRC))						#将.c去掉是为了利用make自动识别目标名使用gcc进行编译$/;"	m
 TEST_SRC	Makefile	/^TEST_SRC=$(wildcard tests\/*_tests.c)$/;"	m
 VALGRIND	Makefile	/^VALGRIND="valgrind --log-file=\/tmp\/valgrind-%p.log" $(MAKE)$/;"	m
 __dbg_h__	src/lcthw/dbg.h	2;"	d
 _minunit_h	tests/minunit.h	3;"	d
 all_tests	tests/list_tests.c	/^RUN_TESTS(all_tests);$/;"	v
 all_tests	tests/list_tests.c	/^char *all_tests() {$/;"	f
+all_tests_algos	tests/list_algos_tests.c	/^RUN_TESTS(all_tests_algos);$/;"	v
+all_tests_algos	tests/list_algos_tests.c	/^char *all_tests_algos(){$/;"	f
 check	src/lcthw/dbg.h	28;"	d
 check_debug	src/lcthw/dbg.h	36;"	d
 check_mem	src/lcthw/dbg.h	34;"	d
 clean_errno	src/lcthw/dbg.h	15;"	d
 count	src/lcthw/list.h	/^	int count;$/;"	m	struct:List
+create_words	tests/list_algos_tests.c	/^List *create_words(){$/;"	f
 debug	src/lcthw/dbg.h	11;"	d
 debug	src/lcthw/dbg.h	9;"	d
 first	src/lcthw/list.h	/^	ListNode *first;$/;"	m	struct:List
+is_sorted	tests/list_algos_tests.c	/^int is_sorted(List *words){$/;"	f
 last	src/lcthw/list.h	/^	ListNode *last;$/;"	m	struct:List
+lcthw_List_algos_h	src/lcthw/list_algos.h	2;"	d
 lcthw_List_h	src/lcthw/list.h	2;"	d
 list	tests/list_tests.c	/^static List *list = NULL;$/;"	v	file:
 log_err	src/lcthw/dbg.h	17;"	d
@@ -61,11 +72,14 @@ sentinel	src/lcthw/dbg.h	31;"	d
 test1	tests/list_tests.c	/^char *test1 = "test1 data";$/;"	v
 test2	tests/list_tests.c	/^char *test2 = "test2 data";$/;"	v
 test3	tests/list_tests.c	/^char *test3 = "test3 data";$/;"	v
+test_bubble_sort	tests/list_algos_tests.c	/^char *test_bubble_sort(){$/;"	f
 test_create	tests/list_tests.c	/^char *test_create(){$/;"	f
 test_destroy	tests/list_tests.c	/^char *test_destroy(){$/;"	f
+test_merge_sort	tests/list_algos_tests.c	/^char *test_merge_sort(){$/;"	f
 test_push_pop	tests/list_tests.c	/^char *test_push_pop(){$/;"	f
 test_remove	tests/list_tests.c	/^char *test_remove(){$/;"	f
 test_shift	tests/list_tests.c	/^char *test_shift(){$/;"	f
 test_unshift	tests/list_tests.c	/^char *test_unshift(){$/;"	f
-tests_run	tests/minunit.h	/^int tests_run;$/;"	v
+tests_run	tests/minunit.h	/^int tests_run; $/;"	v
 value	src/lcthw/list.h	/^	void *value;$/;"	m	struct:ListNode
+values	tests/list_algos_tests.c	/^char *values[] = {"XXXX", "1234", "abcd", "xjvef", "NDSS"};$/;"	v
