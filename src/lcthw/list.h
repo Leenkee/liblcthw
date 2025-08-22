@@ -34,7 +34,7 @@ void *List_shift(List *list);
 
 void *List_remove(List *list, ListNode *node);
 
-//list, start, move, vertex
+//list要遍历的列表, start开始的节点, move移动的方向, vertex位于的节点,可设置为向前或向后遍历
 
 #define LIST_FOREACH(L, S, M, V) ListNode *_node = NULL;\
 	ListNode *V = NULL;\

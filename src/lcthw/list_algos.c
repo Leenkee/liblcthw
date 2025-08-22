@@ -29,19 +29,19 @@ int List_bubble_sort(List *list, List_compare cmp){
 	return 0;
 }
 
-inline List *List_merge(List *left, List *right, List_compare cmp){
+inline List *List_merge(List *left, List *right, List_compare cmp){	//不同粒度下相同的合并方法
 	List *result = List_create();
 	void *val = NULL;
 	
 	while(List_count(left) > 0 || List_count(right) > 0) {
 		if(List_count(left) > 0 && List_count(right) > 0){
 			if(cmp(List_first(left), List_first(right)) <= 0){
-				val = List_shift(left);
+				val = List_shift(left);				//以下的shift的意义在于将小的放入结果后，通过移出，来使左边或右边表的头部移动，相当于改变了下一次将要比较的对象
 			} else {
 				val = List_shift(right);
 			}
 
-			List_push(result, val);
+			List_push(result, val);					//将小的放入结果
 		} else if(List_count(left) > 0) {
 			val = List_shift(left);
 			List_push(result, val);
@@ -63,7 +63,7 @@ List *List_merge_sort(List *list, List_compare cmp){
 	List *right = List_create();
 	int middle = List_count(list) / 2;
 
-	LIST_FOREACH(list, first, next, cur){
+	LIST_FOREACH(list, first, next, cur){		//将数列分成两半
 		if(middle > 0){
 			List_push(left, cur->value);
 		} else {
@@ -79,6 +79,6 @@ List *List_merge_sort(List *list, List_compare cmp){
 	if(sort_left != left) List_destroy(left);
 	if(sort_right != right) List_destroy(right);
 
-	return List_merge(sort_left, sort_right, cmp);
+	return List_merge(sort_left, sort_right, cmp);	//不同粒度下，返回合并排序的结果
 	
 }

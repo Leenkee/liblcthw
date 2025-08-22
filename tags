@@ -22,30 +22,78 @@ List_create	src/lcthw/list.c	/^List *List_create(){$/;"	f
 List_destroy	src/lcthw/list.c	/^void List_destroy(List *list){			\/\/从第一个遍历到最后一个$/;"	f
 List_first	src/lcthw/list.h	26;"	d
 List_last	src/lcthw/list.h	27;"	d
-List_merge	src/lcthw/list_algos.c	/^inline List *List_merge(List *left, List *right, List_compare cmp){$/;"	f
+List_merge	src/lcthw/list_algos.c	/^inline List *List_merge(List *left, List *right, List_compare cmp){	\/\/不同粒度下相同的合并方法$/;"	f
 List_merge_sort	src/lcthw/list_algos.c	/^List *List_merge_sort(List *list, List_compare cmp){$/;"	f
 List_pop	src/lcthw/list.c	/^void *List_pop(List *list){$/;"	f
 List_push	src/lcthw/list.c	/^void List_push(List *list, void *value){$/;"	f
 List_remove	src/lcthw/list.c	/^void *List_remove(List *list, ListNode *node){		\/\/分四种情况删除某点$/;"	f
 List_shift	src/lcthw/list.c	/^void *List_shift(List *list){$/;"	f
 List_unshift	src/lcthw/list.c	/^void List_unshift(List *list, void *value){			\/\/在链表的头部插入节点$/;"	f
+NDEBUG	src/lcthw/ringbuffer.c	1;"	d	file:
 NDEBUG	tests/minunit.h	1;"	d
+NUM_TESTS	tests/queue_tests.c	8;"	d	file:
+NUM_TESTS	tests/stack_tests.c	8;"	d	file:
 NUM_VALUES	tests/list_algos_tests.c	7;"	d	file:
 OBJECTS	Makefile	/^OBJECTS=$(patsubst %.c,%.o,$(SOURCES))					#有这个变量，但是还没有.o文件$/;"	m
 PREFIX	Makefile	/^PREFIX?=\/usr\/local$/;"	m
+QUEUE_FOREACH	src/lcthw/queue.h	19;"	d
+QUEUE_H	src/lcthw/queue.h	2;"	d
+Queue	src/lcthw/queue.h	/^typedef List Queue;$/;"	t
+Queue_clear	src/lcthw/queue.h	10;"	d
+Queue_clear_destroy	src/lcthw/queue.h	11;"	d
+Queue_count	src/lcthw/queue.h	16;"	d
+Queue_create	src/lcthw/queue.h	8;"	d
+Queue_destroy	src/lcthw/queue.h	9;"	d
+Queue_peek	src/lcthw/queue.h	17;"	d
+Queue_recv	src/lcthw/queue.h	14;"	d
+Queue_send	src/lcthw/queue.h	13;"	d
 RUN_TESTS	tests/minunit.h	16;"	d
+RingBuffer	src/lcthw/ringbuffer.h	/^} RingBuffer;$/;"	t	typeref:struct:__anon1
+RingBuffer_available_data	src/lcthw/ringbuffer.h	31;"	d
+RingBuffer_available_space	src/lcthw/ringbuffer.h	34;"	d
+RingBuffer_clear	src/lcthw/ringbuffer.h	59;"	d
+RingBuffer_commit_read	src/lcthw/ringbuffer.h	53;"	d
+RingBuffer_commit_write	src/lcthw/ringbuffer.h	56;"	d
+RingBuffer_create	src/lcthw/ringbuffer.c	/^RingBuffer *RingBuffer_create(int length)$/;"	f
+RingBuffer_destroy	src/lcthw/ringbuffer.c	/^void RingBuffer_destroy(RingBuffer * buffer)$/;"	f
+RingBuffer_empty	src/lcthw/ringbuffer.h	39;"	d
+RingBuffer_ends_at	src/lcthw/ringbuffer.h	50;"	d
+RingBuffer_full	src/lcthw/ringbuffer.h	37;"	d
+RingBuffer_get_all	src/lcthw/ringbuffer.h	44;"	d
+RingBuffer_gets	src/lcthw/ringbuffer.c	/^bstring RingBuffer_gets(RingBuffer * buffer, int amount)$/;"	f
+RingBuffer_puts	src/lcthw/ringbuffer.h	41;"	d
+RingBuffer_read	src/lcthw/ringbuffer.c	/^int RingBuffer_read(RingBuffer * buffer, char *target, int amount)$/;"	f
+RingBuffer_starts_at	src/lcthw/ringbuffer.h	47;"	d
+RingBuffer_write	src/lcthw/ringbuffer.c	/^int RingBuffer_write(RingBuffer * buffer, char *data, int length)$/;"	f
 SOURCES	Makefile	/^SOURCES=$(wildcard src\/**\/*.c src\/*.c)$/;"	m
 SO_TARGET	Makefile	/^SO_TARGET=$(patsubst %.a,%.so,$(TARGET))$/;"	m
+STACK_FOREACH	src/lcthw/stack.h	18;"	d
+STACK_H	src/lcthw/stack.h	2;"	d
+Stack	src/lcthw/stack.h	/^typedef List Stack;$/;"	t
+Stack_clear	src/lcthw/stack.h	9;"	d
+Stack_clear_destroy	src/lcthw/stack.h	10;"	d
+Stack_count	src/lcthw/stack.h	16;"	d
+Stack_create	src/lcthw/stack.h	7;"	d
+Stack_destroy	src/lcthw/stack.h	8;"	d
+Stack_peek	src/lcthw/stack.h	14;"	d
+Stack_pop	src/lcthw/stack.h	13;"	d
+Stack_push	src/lcthw/stack.h	12;"	d
 TARGET	Makefile	/^TARGET=build\/liblcthdw.a$/;"	m
 TESTS	Makefile	/^TESTS=$(patsubst %.c,%,$(TEST_SRC))						#将.c去掉是为了利用make自动识别目标名使用gcc进行编译$/;"	m
 TEST_SRC	Makefile	/^TEST_SRC=$(wildcard tests\/*_tests.c)$/;"	m
 VALGRIND	Makefile	/^VALGRIND="valgrind --log-file=\/tmp\/valgrind-%p.log" $(MAKE)$/;"	m
 __dbg_h__	src/lcthw/dbg.h	2;"	d
+_lcthw_RingBuffer_h	src/lcthw/ringbuffer.h	2;"	d
 _minunit_h	tests/minunit.h	3;"	d
 all_tests	tests/list_tests.c	/^RUN_TESTS(all_tests);$/;"	v
 all_tests	tests/list_tests.c	/^char *all_tests() {$/;"	f
+all_tests	tests/queue_tests.c	/^RUN_TESTS(all_tests);$/;"	v
+all_tests	tests/queue_tests.c	/^char *all_tests()$/;"	f
+all_tests	tests/stack_tests.c	/^RUN_TESTS(all_tests);$/;"	v
+all_tests	tests/stack_tests.c	/^char *all_tests()$/;"	f
 all_tests_algos	tests/list_algos_tests.c	/^RUN_TESTS(all_tests_algos);$/;"	v
 all_tests_algos	tests/list_algos_tests.c	/^char *all_tests_algos(){$/;"	f
+buffer	src/lcthw/ringbuffer.h	/^    char *buffer;$/;"	m	struct:__anon1
 check	src/lcthw/dbg.h	28;"	d
 check_debug	src/lcthw/dbg.h	36;"	d
 check_mem	src/lcthw/dbg.h	34;"	d
@@ -54,11 +102,13 @@ count	src/lcthw/list.h	/^	int count;$/;"	m	struct:List
 create_words	tests/list_algos_tests.c	/^List *create_words(){$/;"	f
 debug	src/lcthw/dbg.h	11;"	d
 debug	src/lcthw/dbg.h	9;"	d
+end	src/lcthw/ringbuffer.h	/^    int end;$/;"	m	struct:__anon1
 first	src/lcthw/list.h	/^	ListNode *first;$/;"	m	struct:List
 is_sorted	tests/list_algos_tests.c	/^int is_sorted(List *words){$/;"	f
 last	src/lcthw/list.h	/^	ListNode *last;$/;"	m	struct:List
 lcthw_List_algos_h	src/lcthw/list_algos.h	2;"	d
 lcthw_List_h	src/lcthw/list.h	2;"	d
+length	src/lcthw/ringbuffer.h	/^    int length;$/;"	m	struct:__anon1
 list	tests/list_tests.c	/^static List *list = NULL;$/;"	v	file:
 log_err	src/lcthw/dbg.h	17;"	d
 log_info	src/lcthw/dbg.h	25;"	d
@@ -68,18 +118,29 @@ mu_run_test	tests/minunit.h	13;"	d
 mu_suite_start	tests/minunit.h	9;"	d
 next	src/lcthw/list.h	/^	struct ListNode *next;$/;"	m	struct:ListNode	typeref:struct:ListNode::ListNode
 prev	src/lcthw/list.h	/^	struct ListNode *prev;$/;"	m	struct:ListNode	typeref:struct:ListNode::ListNode
+queue	tests/queue_tests.c	/^static Queue *queue = NULL;$/;"	v	file:
 sentinel	src/lcthw/dbg.h	31;"	d
+stack	tests/stack_tests.c	/^static Stack *stack = NULL;$/;"	v	file:
+start	src/lcthw/ringbuffer.h	/^    int start;$/;"	m	struct:__anon1
 test1	tests/list_tests.c	/^char *test1 = "test1 data";$/;"	v
 test2	tests/list_tests.c	/^char *test2 = "test2 data";$/;"	v
 test3	tests/list_tests.c	/^char *test3 = "test3 data";$/;"	v
 test_bubble_sort	tests/list_algos_tests.c	/^char *test_bubble_sort(){$/;"	f
 test_create	tests/list_tests.c	/^char *test_create(){$/;"	f
+test_create	tests/queue_tests.c	/^char *test_create()$/;"	f
+test_create	tests/stack_tests.c	/^char *test_create()$/;"	f
 test_destroy	tests/list_tests.c	/^char *test_destroy(){$/;"	f
+test_destroy	tests/queue_tests.c	/^char *test_destroy()$/;"	f
+test_destroy	tests/stack_tests.c	/^char *test_destroy()$/;"	f
 test_merge_sort	tests/list_algos_tests.c	/^char *test_merge_sort(){$/;"	f
 test_push_pop	tests/list_tests.c	/^char *test_push_pop(){$/;"	f
+test_push_pop	tests/stack_tests.c	/^char *test_push_pop()$/;"	f
 test_remove	tests/list_tests.c	/^char *test_remove(){$/;"	f
+test_send_recv	tests/queue_tests.c	/^char *test_send_recv()$/;"	f
 test_shift	tests/list_tests.c	/^char *test_shift(){$/;"	f
 test_unshift	tests/list_tests.c	/^char *test_unshift(){$/;"	f
+tests	tests/queue_tests.c	/^char *tests[] = { "test1 data", "test2 data", "test3 data" };$/;"	v
+tests	tests/stack_tests.c	/^char *tests[] = { "test1 data", "test2 data", "test3 data" };$/;"	v
 tests_run	tests/minunit.h	/^int tests_run; $/;"	v
 value	src/lcthw/list.h	/^	void *value;$/;"	m	struct:ListNode
 values	tests/list_algos_tests.c	/^char *values[] = {"XXXX", "1234", "abcd", "xjvef", "NDSS"};$/;"	v
